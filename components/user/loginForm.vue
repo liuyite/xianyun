@@ -67,7 +67,7 @@ export default {
                             }
                         })
                         .catch(err => {
-                            this.$message.error("用户名或密码错误");
+                            // this.$message.error("用户名或密码错误");
                         });
                 } else {
                     this.$message.error("用户名或密码不能为空");
