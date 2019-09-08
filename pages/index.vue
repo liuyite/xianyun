@@ -12,7 +12,7 @@
                 `"
                     ></div>
                 </el-carousel-item>
-            </el-carousel>//添加搜索框
+            </el-carousel>
             <div class="banner-content">
                 <div class="search-bar">
                     <!-- tab栏 -->

@@ -172,6 +172,10 @@ export default {
                 this.$alert("请输入出发日期！！！", "提示");
                 return;
             }
+            //存储本地数据airs
+            let arr = JSON.parse(localStorage.getItem('airs'))||[]
+            arr.push(this.form)
+            localStorage.setItem('airs',JSON.stringify(arr))
             this.$router.push({
                 path: "/air/flights",
                 query: this.form

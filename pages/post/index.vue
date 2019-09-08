@@ -53,7 +53,7 @@
                 <div class="post-title">
                     <div class="tuijian">
                         <h4>推荐攻略</h4>
-                        <el-button type="primary">
+                        <el-button type="primary" @click="$router.push('/post/create')">
                             <i class="el-icon-edit"></i>写游记
                         </el-button>
                     </div>
@@ -242,7 +242,6 @@ body > .el-container {
     line-height: 320px;
 }
 .aside-nav {
-    height: 165px;
     width: 260px;
     border-top: 1px solid #ddd;
     border-left: 1px solid #ddd;
@@ -266,14 +265,17 @@ body > .el-container {
     margin-top: 20px;
     text-align: left;
 }
+.el-container{
+    position: relative;
+}
 .menu-active {
     position: absolute;
     width: 400px;
-    top: 81px;
-    left: 519px;
+    top: 20px;
+    left: 259px;
     background: #fff;
     border: 1px solid #ddd;
-    padding-bottom: 20px;
+    padding-bottom: 17px;
     z-index: 9;
     .menu-option {
         height: 40px;

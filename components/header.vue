@@ -2,7 +2,7 @@
     <div class="header">
         <el-row type="flex" class="row" justify="space-between">
             <div class="imgs">
-                <img src="http://157.122.54.189:9093/images/logo.jpg" alt />
+               <nuxt-link to="/"><img src="http://157.122.54.189:9093/images/logo.jpg" alt /></nuxt-link> 
             </div>
             <el-row class="nav" type="flex">
                 <nuxt-link to="/">首页</nuxt-link>
