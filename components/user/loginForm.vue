@@ -60,7 +60,7 @@ export default {
                                 );
                                 this.$message.success("登录成功，正在进行跳转");
                                 setTimeout(() => {
-                                    this.$router.replace("/");
+                                    this.$router.back();
                                 }, 1000);
                             } else {
                                 this.$message.error("用户名或密码错误");

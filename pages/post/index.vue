@@ -1,8 +1,10 @@
 <template>
     <div class="post">
         <el-container>
+            <!-- 侧边栏内容 -->
             <el-aside width="260px">
                 <div class="aside-nav">
+                    <!-- 侧边栏的tap导航 -->
                     <div class="menus" @mouseleave="current =-1">
                         <div
                             :class="{br:current !==index,topindex:true}"
@@ -14,6 +16,7 @@
                                 <i></i>
                             </div>
                         </div>
+                        <!-- 鼠标经过tab栏才显示 -->
                         <div class="menu-active" v-show="current !=-1" @mouseleave="current =-1">
                             <div
                                 class="menu-option"
@@ -27,6 +30,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- 推荐城市区域 -->
                 <div class="aside-recommend">
                     <h4 class="aside-title">推荐城市</h4>
                     <nuxt-link to="/post" class="aside-recommend-item">
@@ -34,7 +38,9 @@
                     </nuxt-link>
                 </div>
             </el-aside>
+            <!-- 主体内容 -->
             <el-container>
+                <!-- 搜索栏区域 -->
                 <div class="search">
                     <input
                         type="text"
@@ -59,14 +65,20 @@
                     </div>
                 </div>
                 <!-- 此处是放组件的 -->
-                <el-main>Main</el-main>
+                <el-main>
+                    <indexMain/>
+                </el-main>
                 <el-footer>Footer</el-footer>
             </el-container>
         </el-container>
     </div>
 </template>
 <script>
+import indexMain from "@/components/post/index_main"
 export default {
+    components:{
+        indexMain
+    },
     data() {
         return {
             current: -1,
@@ -89,7 +101,6 @@ export default {
             this.menusList.forEach(e => {
                 this.menuChild.push(e.children);
             });
-            console.log(this.menuChild);
         });
     }
 };
@@ -165,7 +176,7 @@ export default {
                 height: 2px;
                 background: orange;
                 position: absolute;
-                bottom:-11px;
+                bottom: -11px;
                 left: 0;
             }
         }
@@ -224,9 +235,7 @@ export default {
 }
 .el-main {
     background-color: #e9eef3;
-    color: #333;
-    text-align: center;
-    line-height: 160px;
+    padding:0
 }
 
 body > .el-container {
@@ -265,7 +274,7 @@ body > .el-container {
     margin-top: 20px;
     text-align: left;
 }
-.el-container{
+.el-container {
     position: relative;
 }
 .menu-active {

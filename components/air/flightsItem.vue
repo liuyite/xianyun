@@ -47,7 +47,7 @@
                         </el-col>
                         <el-col :span="5" class="price">￥{{item.settle_price}}</el-col>
                         <el-col :span="3" class="choose-button">
-                            <el-button type="warning" size="mini">选定</el-button>
+                            <el-button type="warning" size="mini" @click="submitBtn(item.seat_xid)">选定</el-button>
                             <p>剩余：{{item.discount}}</p>
                         </el-col>
                     </el-row>
@@ -90,6 +90,12 @@ export default {
                 mins = "0" + mins;
             }
             return `${hours}时${mins}分`;
+        }
+    },
+    methods:{
+        submitBtn(seat_xid){
+            console.log(seat_xid)
+            this.$router.push(`/air/order?id=${this.data.id}&seat_xid=${seat_xid}`)
         }
     }
 };
